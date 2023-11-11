@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "animate.css";
-
-
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-
 import TextField from "@mui/material/TextField";
 
 function Entry({ check, change, setCollect }) {
@@ -20,8 +16,6 @@ function Entry({ check, change, setCollect }) {
   });
 
   setCollect(data);
-
-
 
   // MUI theme
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -95,7 +89,7 @@ function Entry({ check, change, setCollect }) {
                     sx={{ m: 1 }}
                   />
                 }
-                // label="MUI switch"
+              // label="MUI switch"
               />
             </FormGroup>
           </div>
@@ -129,9 +123,9 @@ function Entry({ check, change, setCollect }) {
                 />
               </div>
 
-             
+
               <div className="mt-4 ">
-              <h5 className="text-center mb-3">Select Category</h5>
+                <h5 className="text-center mb-3">Select Category</h5>
 
                 <ToggleButtonGroup
                   color="primary"

@@ -24,8 +24,6 @@ function QuestionBar({
   const [letClick] = useSound(click)
   const [letCorrect] = useSound(correctA)
   const [letWrong] = useSound(inCorrect)
- 
-
 
   const delay = (duration, callback) => {
     setTimeout(() => {
@@ -59,17 +57,17 @@ function QuestionBar({
     delay(3000, () => {
       if (a.correct) {
         letCorrect();
-      delay(4000,()=>{
-        setQuestionNumber((prev) => prev + 1);
-        setSelectedAnswer(null);
-        setScore((prev) => prev + 1);
-      })
+        delay(4000, () => {
+          setQuestionNumber((prev) => prev + 1);
+          setSelectedAnswer(null);
+          setScore((prev) => prev + 1);
+        })
       } else {
         letWrong();
-        delay(4000,()=>{
+        delay(4000, () => {
           setQuestionNumber((prev) => prev + 1);
 
-      })
+        })
         // setStop(true)
       }
     });
@@ -96,7 +94,7 @@ function QuestionBar({
           </div>
         ))}
       </div>
-    </div>  
+    </div>
   );
 }
 
