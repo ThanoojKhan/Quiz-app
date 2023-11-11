@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 function Result({ score, questionNumber, name }) {
 
-
-
   return (
     <div className="d-flex justify-content-center align-items-center h-100 flex-column container">
       <div className="d-flex justify-content-center align-items-center h-100 animate__animated animate__flip">
