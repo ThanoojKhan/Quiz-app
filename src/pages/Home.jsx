@@ -7,8 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Home({ collect }) {
-  // console.log(collect);
-  
 
   const [data, setData] = useState([]);
 
@@ -701,27 +699,25 @@ function Home({ collect }) {
       }
     };
 
-    // Call the handleSubmit function inside the useEffect to avoid the "Too many re-renders" error
     handleSubmit(collect);
   }, [collect]);
 
-  const name = collect.name ;
+  const name = collect.name;
 
-  // console.log(data);
 
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [score, setScore] = useState(0);
- 
+
   const [click, setClick] = useState(true);
 
-  const handlclickToast = ()=>{
-    if(click){
+  const handlclickToast = () => {
+    if (click) {
       toast.warning("Pls wait.. ✓ or ✕")
     }
   }
 
-  
+
 
   return (
     <div className="">
@@ -732,14 +728,14 @@ function Home({ collect }) {
         {" "}
         {(questionNumber > 10 || stop) ? (
           <>
-            { questionNumber > 10 ? <Result score={score} questionNumber={questionNumber} name={name}/> : <GameOver/> }
+            {questionNumber > 10 ? <Result score={score} questionNumber={questionNumber} name={name} /> : <GameOver />}
           </>
         ) : (
           <>
             <div className="top w-100 h-25  d-flex flex-column justify-content-center align-items-center">
 
               <div
-                style={{ width: "70px", height: "70px",marginTop:"12vh" }}
+                style={{ width: "70px", height: "70px", marginTop: "12vh" }}
                 className="timer border border-primary border-2 shadow d-flex align-items-center justify-content-center fs-4 fw-bolder  rounded-circle"
               >
                 <Time setStop={setStop} questionNumber={questionNumber} />
@@ -751,8 +747,8 @@ function Home({ collect }) {
 
             <div className="bottom h-100 ">
               <QuestionBar
-              handlclickToast={handlclickToast}
-              setClick={setClick}
+                handlclickToast={handlclickToast}
+                setClick={setClick}
                 setScore={setScore}
                 data={data}
                 setStop={setStop}
@@ -764,10 +760,10 @@ function Home({ collect }) {
         )}
       </div>
       <ToastContainer
-      position="top-center"
-      width={"100%"}
-      autoClose={2000}
-      theme="dark"
+        position="top-center"
+        width={"100%"}
+        autoClose={2000}
+        theme="dark"
       />
     </div>
   );

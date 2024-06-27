@@ -17,7 +17,6 @@ function Entry({ check, change, setCollect }) {
 
   setCollect(data);
 
-  // MUI theme
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
@@ -66,7 +65,6 @@ function Entry({ check, change, setCollect }) {
     },
   }));
 
-  // selection
   const [alignment, setAlignment] = React.useState("web");
 
   const handleChange = (event, newAlignment) => {
@@ -89,7 +87,6 @@ function Entry({ check, change, setCollect }) {
                     sx={{ m: 1 }}
                   />
                 }
-              // label="MUI switch"
               />
             </FormGroup>
           </div>
@@ -123,10 +120,8 @@ function Entry({ check, change, setCollect }) {
                 />
               </div>
 
-
               <div className="mt-4 ">
                 <h5 className="text-center mb-3">Select Category</h5>
-
                 <ToggleButtonGroup
                   color="primary"
                   value={alignment}
@@ -142,7 +137,6 @@ function Entry({ check, change, setCollect }) {
               </div>
 
               <div className="m-5 w-25">
-
                 {data?.name?.length > 0 && data?.categorie?.length > 0 ? (
                   <Link
                     className="text-decoration-none text-white"
@@ -172,7 +166,6 @@ function Entry({ check, change, setCollect }) {
                   </Link>
                 )}
               </div>
-
             </div>
           </form>
         </div>
